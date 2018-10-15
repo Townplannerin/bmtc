@@ -1,0 +1,52 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMTC @ KBS</title>
+    <meta charset="utf-8" />
+    <link 
+        rel="stylesheet" 
+        href="leaflet.css"
+    />
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script
+        src="leaflet.js">
+    </script>
+    <script
+        src="kml.js">
+    </script>
+
+    <script>
+        var map = L.map('map').setView([12.9781248, 77.572226], 19);
+        
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy;Data courtesy opencity.in',
+            maxZoom: 19,
+            }).addTo(map);
+	 map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
+
+	var kmlLayer = new L.KML("BMTC.kml", {async: true});
+                                                              
+         kmlLayer.on("loaded", function(e) { 
+            map.fitBounds(e.target.getBounds());
+         });
+                                                
+         map.addLayer(kmlLayer);
+         
+    </script>
+</body>
+</html>
