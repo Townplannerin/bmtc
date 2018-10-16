@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Full Screen Leaflet Map</title>
+    <title>BMTC @ KBS</title>
     <meta charset="utf-8" />
     <link 
         rel="stylesheet" 
@@ -48,7 +48,8 @@
         l.bindPopup(out.join("<br />"));
     }
 }
-var jsonTest = new L.GeoJSON.AJAX(["BMTC.geojson"],{onEachFeature:popUp}).addTo(map);
+var jsonTest = new L.GeoJSON.AJAX(["BMTC.geojson"],{onEachFeature:popUp}).addTo(map);
+
     </script>
 </body>
 </html>
