@@ -7,11 +7,9 @@
 <meta name="description" content="Web application">
 <meta name="author" content="Saikprajwal">
 <title>BMTC @ KBS</title>
-    <link 
-        rel="stylesheet" 
-        href="leaflet.css"
-    />
-    <style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
         body {
             padding: 0;
             margin: 0;
@@ -26,19 +24,16 @@
 <body>
     <div id="map"></div>
 
-    <script
-        src="leaflet.js">
-    </script>
-    <script
-        src="leaflet.ajax.js">
-    </script>
-
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+  integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+  crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js" integrity="sha256-rVeyUZMfAHhQJ7hvWaHrKknTDdqGcn1gxBBJA++E4z8=" crossorigin="anonymous"></script>
     <script>
-        var map = L.map('map').setView([12.9781248, 77.572226], 10);
+        var map = L.map('map').setView([12.9781248, 77.572226], 19);
         
         L.tileLayer(
             'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'courtesy opencity.in (Credit:Vijay Kumar Prakash) | <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            attribution: 'courtesy opencity.in (Credit:Vijay Kumar Prakash) | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
             maxZoom: 21,
             }).addTo(map);
 	 map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
@@ -52,10 +47,7 @@
         l.bindPopup(out.join("<br />"));
     }
 }
-var json = new L.GeoJSON.AJAX(["BMTC.geojson"],{onEachFeature:popUp})
-json.on('data:loaded', function() { 
-this.map.fitBounds(json.getBounds());
-json.addTo(this.map); }.bind(this));
+var json = new L.GeoJSON.AJAX(["BMTC.geojson"],{onEachFeature:popUp}).addTo(map);
 
 var legend = L.control();
 	legend.onAdd = function (map) {
