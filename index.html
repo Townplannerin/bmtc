@@ -43,7 +43,7 @@
         l.bindPopup(out.join("<br />"));
     }
 }
-var json = new L.GeoJSON.AJAX(["BMTC.geojson"],{onEachFeature:popUp});
+var json = new L.GeoJSON.AJAX(["bmtc.geojson"],{onEachFeature:popUp});
 json.addTo(map);
 
 var legend = L.control();
