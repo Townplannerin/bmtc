@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -47,6 +46,7 @@
 var json = new L.GeoJSON.AJAX(["https://raw.githubusercontent.com/geohacker/bmtc/master/data/busstops.geojson"],{onEachFeature:popUp});
 json.addTo(map);
 
+	    
 var legend = L.control();
 	legend.onAdd = function (map) {
 		div = L.DomUtil.create( 'div', 'info legend' );
