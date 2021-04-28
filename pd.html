@@ -20,7 +20,6 @@
         }
 .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
         </style>
-        <title></title>
     </head>
     <body>
         <div id="map">
@@ -42,7 +41,7 @@
             zoomControl:true, maxZoom:21, minZoom:1
         })
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://openstreetmap.org">OpenStreetMap</a>');
+        map.attributionControl.setPrefix('<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | <a href="https://bbmp.gov.in/landusemaps.html">RMP-2015 Landuse maps Ctsy : BBMP</a>');
 	L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
