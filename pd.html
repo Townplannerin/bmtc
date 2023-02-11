@@ -29,7 +29,7 @@
         <script src="js/leaflet-1.4.0.js"></script>
         <script src="js/leaflet-hash.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>                
-        <script src="js/L.Control.Locate.js"></script>                      
+        <script src="js/L.Control.Locate.min.js"></script>                      
         <script src="data/pd.js"></script>
         <script src="data/bbmp.js"></script>		
         <script src="data/Road.js"></script>
@@ -46,14 +46,6 @@ var legend = L.control();
         return div;
     };
     legend.addTo(map);
-var north = L.control({position: "bottomleft"});
-north.onAdd = function(map) {
-    var div = L.DomUtil.create("div", "info legend");
-    div.innerHTML = '<img src="css/images/NORTH.jpg">';
-    return div;
-}
-north.addTo(map);
-
 function popUp(f,l){
     var out = [];
     if (f.properties){
